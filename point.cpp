@@ -12,6 +12,15 @@ Point::Point(double xCord, double yCord){
     Y = yCord;
 }
 
+Point::Point(){
+
+}
+
+void Point::setCords(double x, double y){
+    X = x;
+    Y = y;
+}
+
 double Point::getX(){
     return X;
 }
@@ -26,17 +35,4 @@ string Point::printPoint(){
     xstream << fixed << setprecision(1) << X;
     ystream << fixed << setprecision(1) << Y;
     return "X: " + xstream.str() + ", Y: " + ystream.str();
-}
-
-bool nearEqual(double num1, double num2, double acceptableDelta)
-{
-    bool retVal = false;
-    //find the difference between the two numbers
-    double diff = num1 - num2;
-    //if the absolute value between the difference is smaller than the acceptable allowed difference then it is close enough
-    if(fabs(diff) <= acceptableDelta)
-    {
-        retVal = true;
-    }
-    return retVal;
 }
