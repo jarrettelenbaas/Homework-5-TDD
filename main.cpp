@@ -1,3 +1,6 @@
+// Homework 5 TDD & PP
+// Jarrett E., Sam G., Nick W.
+
 #include <iostream>
 #include <cmath>
 #define CATCH_CONFIG_RUNNER
@@ -146,5 +149,14 @@ TEST_CASE("Point"){
         Line l2(p3, p4);
 
         REQUIRE(l1.isCrossing(l2) == false);
+
+        Point p5(4.0, 0.0);
+        Point p6(4.0, 8.0);
+        Line l3(p5, p6);
+        Point p7(0.0, 4.0);
+        Point p8(8.0, 4.0);
+        Line l4(p7, p8);
+
+        REQUIRE(l3.isCrossing(l4) == true);
     }
 }
